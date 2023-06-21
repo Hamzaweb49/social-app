@@ -1,0 +1,113 @@
+@import "../../style.scss";
+
+.navbar{
+    @include themify($themes){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem 1.2rem;
+    height: 3.1rem;
+    border-bottom: .1rem solid themed("border");
+    position: sticky;
+    top: 0;
+    // width: 100%;
+    z-index: 1000;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 2.2rem;
+
+        span{
+            font-weight: bold;
+            color: themed("logo");
+            font-size: 1.4rem;
+        }
+
+        .navbarIcon{
+            cursor: pointer;
+            // color: default;
+            color: themed("textColor");
+        }
+
+        .search{
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: .1rem solid themed("border");
+            border-radius: 0.2rem;
+            padding: 0.2rem;
+
+            .navbarIcon{
+                cursor: pointer;
+            }
+
+            input{
+                border: none;
+                width: 30vh;
+                background-color: transparent;
+                color: themed("textColor");
+
+                @include mobile{
+                    display: none;
+                }
+
+                @include tablet{
+                    width: 15vh;
+                }
+
+            }
+
+            input:focus{
+                outline: none;
+            }
+        }
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+
+        .navbarIcon{
+            cursor: pointer;
+
+            @include tablet{
+                display: none;
+            }
+
+            @include mobile{
+                display: none;
+            }
+        }
+
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            img{
+                width: 2.3rem;
+                height: 2.3rem;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            span{
+                @include tablet{
+                    display: none;
+                }
+
+                @include mobile{
+                    display: none;
+                }
+            }
+
+        }
+
+    }
+}
+}
